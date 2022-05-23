@@ -16,6 +16,7 @@
   border-radius: 1.5em;
   height: 40vh;
   box-shadow: 0 10px 10px #565c76;
+  border-right: 5px solid wheat;
 }
 
 .left-col {
@@ -34,19 +35,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-left: 1px solid wheat;
 }
 
 .right-col button {
   margin: .5em 0;
   padding: 1em .5em;
   border-radius: .5em;
-  border: none;
+  border: 1px solid #111b48;
   width: 80%;
   cursor: pointer;
+  color: wheat;
+  background-color: #293462;
 }
 
 .right-col button:hover {
   background-color: rgb(247, 198, 133);
+  color: white;
 }
 
 .score-container {
@@ -57,3 +62,42 @@
   width: 100%;
 }
 
+
+
+@media only screen and (max-width: 769px) {
+  .App {
+    min-width: 70%;
+  }
+  .card-container {
+    min-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card-container {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left-col {
+    width: 100%;
+    text-align: center;
+  }
+
+  .right-col {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: auto;
+    border-left: none;
+  }
+
+  .right-col button {
+    margin: 0 .5em;
+    font-size: .6em;
+    width: auto;
+  }
+}
