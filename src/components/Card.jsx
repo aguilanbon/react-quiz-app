@@ -42,9 +42,15 @@ function Card() {
     ];
 
     const [currentQuestion, setCurrentQuestion] = useState(0)
+    const [currentScore, setCurrentScore] = useState(0)
     const [showScore, setShowScore] = useState(false)
 
-    const handleClick = () => {
+    const handleClick = (isCorrect) => {
+
+        if (isCorrect) {
+            setCurrentScore(currentScore + 1)
+        }
+
         let nextQuestion = currentQuestion + 1
         if (nextQuestion === questions.length) {
             setShowScore(true)
@@ -58,18 +64,18 @@ function Card() {
             {showScore ? (
                 <div className="score-container">
                     <h2>You scored</h2>
-                    <h1>1 / {questions.length}</h1>
+                    <h1>{currentScore} / {questions.length}</h1>
                 </div>
             ) :
                 (
                     <>
                         <div className="left-col">
-                            <h2>Question 1 / {questions.length}</h2>
+                            <h2>Question {currentQuestion + 1} / {questions.length}</h2>
                             <h3>{questions[currentQuestion].questionText}</h3>
                         </div>
                         <div className="right-col">
                             {questions[currentQuestion].answerOptions.map((choices, index) => (
-                                <button key={index} onClick={() => handleClick()}>{choices.answerText}</button>
+                                <button key={index} onClick={() => handleClick(choices.isCorrect)}>{choices.answerText}</button>
                             ))}
                         </div>
                     </>
