@@ -48,3 +48,12 @@
 .right-col button:hover {
   background-color: rgb(247, 198, 133);
 }
+
+.score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
