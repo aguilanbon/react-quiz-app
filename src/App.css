@@ -66,6 +66,7 @@
 
 @media only screen and (max-width: 769px) {
   .App {
+    height: auto;
     min-width: 70%;
   }
   .card-container {
@@ -85,12 +86,13 @@
   .left-col {
     width: 100%;
     text-align: center;
+    font-size: .8em;
   }
 
   .right-col {
     display: flex;
     flex-direction: row;
-    width: 100vw;
+    max-width: 95vw;
     height: auto;
     border-left: none;
   }
